@@ -61,7 +61,7 @@ body{
     bottom: -80px;
 }
 form{
-    height: 720px;
+    height: 20px;
     width: 400px;
     background-color: rgba(255,255,255,0.13);
     position: absolute;
@@ -149,22 +149,31 @@ button{
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form>
+    <div>
+    <form action="{% url 'officer_reg' %}" method="post">
+        {% csrf_token %}
         <h3>Voter Registration</h3>
 
-        <label for="username">Username</label>
-        <input type="text" placeholder="Email or Phone" id="username">
+        <label for="Registration No">Registration Number</label>
+        <input type="text" name="regno" placeholder="" >
+
+        <label for="username">Full name</label>
+        <input type="text" name="rname" placeholder="" >
 
         <label for="username">Username</label>
-        <input type="text" placeholder="Email or Phone" id="username">
+        <input type="text" name="runame" placeholder="" >
 
-        <label for="username">Username</label>
-        <input type="text" placeholder="Email or Phone" id="username">
+        <label for="username">Email</label>
+        <input type="text" name="remail" placeholder="" >
 
-        <label for="password">Password</label>
-        <input type="password" placeholder="Password" id="password">
+        <label for="username">Phone number</label>
+        <input type="text" name="rcontact" placeholder="" >
 
-        <button>Log In</button>
+        <label for="username">Password</label>
+        <input type="text" name="rpass" placeholder="" >
+
+        <button type="submit">Log In</button>
+
         <div class="social">
           <div class="go"><i class="fab"></i><a href={% url 'officer_login' %}>  New member</a></div>
           <div class="fb"><i class="fab"></i><a href={% url 'voter_login' %}>  Voter Login</a></div>

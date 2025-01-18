@@ -29,6 +29,7 @@ urlpatterns = [
     #officer
     path('officer_login/',views.officer_login,name='officer_login'),
     path('officer_reg/',views.officer_reg,name='officer_reg'),
+    path('officer_home/',views.officer_home,name='officer_home'),
     
     
 ]

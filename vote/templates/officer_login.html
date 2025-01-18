@@ -149,16 +149,20 @@ button{
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form>
+    <form action={% url 'officer_login' %} method="post">
+        {% csrf_token %}
         <h3>Officer Login</h3>
 
+        <label for="username">Register number</label>
+        <input type="text" name="regno" placeholder="">
+
         <label for="username">Username</label>
-        <input type="text" placeholder="Email or Phone" id="username">
+        <input type="text" name="runame">
 
         <label for="password">Password</label>
-        <input type="password" placeholder="Password" id="password">
+        <input type="password" name="rpass">
 
-        <button>Log In</button>
+        <button type="submit">Log In</button>
         <div class="social">
           <div class="go"><i class="fab"></i><a href={% url 'officer_reg' %}>  New member</a></div>
           <div class="fb"><i class="fab"></i><a href={% url 'voter_login' %}>  Voter Login</a></div>
