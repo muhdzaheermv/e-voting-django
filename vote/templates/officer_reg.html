@@ -61,7 +61,7 @@ body{
     bottom: -80px;
 }
 form{
-    height: 520px;
+    height: 720px;
     width: 400px;
     background-color: rgba(255,255,255,0.13);
     position: absolute;
@@ -150,7 +150,13 @@ button{
         <div class="shape"></div>
     </div>
     <form>
-        <h3>Officer Login</h3>
+        <h3>Voter Registration</h3>
+
+        <label for="username">Username</label>
+        <input type="text" placeholder="Email or Phone" id="username">
+
+        <label for="username">Username</label>
+        <input type="text" placeholder="Email or Phone" id="username">
 
         <label for="username">Username</label>
         <input type="text" placeholder="Email or Phone" id="username">
@@ -160,7 +166,7 @@ button{
 
         <button>Log In</button>
         <div class="social">
-          <div class="go"><i class="fab"></i><a href={% url 'officer_reg' %}>  New member</a></div>
+          <div class="go"><i class="fab"></i><a href={% url 'officer_login' %}>  New member</a></div>
           <div class="fb"><i class="fab"></i><a href={% url 'voter_login' %}>  Voter Login</a></div>
         </div>
     </form>

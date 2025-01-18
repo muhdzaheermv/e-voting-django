@@ -6,10 +6,16 @@ def index(request):
 
 def home(request):
     return render(request,"home.html")
-    
-def login_officer(request):
-    return render(request,"officer_login.html")
 
-def register_officer(request):
-    return render(request,"officer_registration.html")
+def voter_reg(request):
+    return render(request,"voter_reg.html")
+
+def voter_login(request):
+    return render(request,"voter_login.html")
+
+def officer_reg(request):
+    return render(request,"officer_reg.html")
+
+def officer_login(request):
+    return render(request,"officer_login.html")
 

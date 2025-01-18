@@ -21,6 +21,14 @@ from django.urls import path
 urlpatterns = [
     path('',views.index,name='index'),
     path('home/',views.home,name='home'),
-    path('officer_login/',views.login_officer,name='officer_login'),
-    path('officer_register/',views.register_officer,name='officer_register'),
+    
+    #voter
+    path('voter_login/',views.voter_login,name='voter_login'),
+    path('voter_reg/',views.voter_reg,name='voter_reg'),
+    
+    #officer
+    path('officer_login/',views.officer_login,name='officer_login'),
+    path('officer_reg/',views.officer_reg,name='officer_reg'),
+    
+    
 ]
