@@ -20,8 +20,9 @@ def officer_reg(request):
       uname = request.POST.get('runame')
       email = request.POST.get('remail')
       phone = request.POST.get('rcontact')
+      address=request.POST.get('raddress')
       passw = request.POST.get('rpass')
-      ElectionOfficer(register_no=regno,name=name,phone_number=phone,email=email,username=uname,password=passw).save()
+      ElectionOfficer(register_no=regno,name=name,phone_number=phone,email=email,username=uname,address=address,password=passw).save()
       return render(request,'officer_login.html')
    else:
       return render(request,"officer_reg.html")
@@ -49,4 +50,16 @@ def officer_login(request):
     
 def officer_home(request):
     return render(request,"officer_home.html")
+    
+def officer_profile(request):
+    c=request.session['cs']
+    cr=ElectionOfficer.objects.get(username=c)
+    pregno=cr.register_no
+    pname=cr.name
+    puname=cr.username
+    pemail=cr.email
+    pcontact=cr.phone_number
+    paddress=cr.address
+    pcreatedat=cr.created_at
+    return render(request,"officer_profile.html",{'regno':pregno,'name':pname,'uname':puname,'contact':pcontact,'email':pemail,'address':paddress,'created_at':pcreatedat})
 
