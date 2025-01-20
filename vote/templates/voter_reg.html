@@ -149,24 +149,27 @@ button{
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form>
+
+    <form action="" method="post">
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                <div {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
         <h3>Voter Registration</h3>
+        {% csrf_token %}
+        {{ form.as_p }}
 
-        <label for="username">Username</label>
-        <input type="text" placeholder="Email or Phone" id="username">
 
-        <label for="username">Username</label>
-        <input type="text" placeholder="Email or Phone" id="username">
-
-        <label for="username">Username</label>
-        <input type="text" placeholder="Email or Phone" id="username">
-
-        <label for="password">Password</label>
-        <input type="password" placeholder="Password" id="password">
-
-        <button>Log In</button>
+        <button type="submit">Log In</button>
         <div class="social">
-          <div class="go"><i class="fab"></i><a href="voter_reg/">  New member</a></div>
+          <div class="go"><i class="fab"></i><a href={% url 'voter_login' %}>  Already a member</a></div>
           <div class="fb"><i class="fab"></i><a href="officer_reg/">  Officer reg</a></div>
         </div>
     </form>

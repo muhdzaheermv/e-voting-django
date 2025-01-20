@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Election reg</h1>
+    <form action="/election_reg/" method="post">
+       {% csrf_token %}
+    
+    <input type="text" name="ename" placeholder="election name"><br><br>
+    
+    <input type="text" name="edesc" placeholder="description"><br><br>
+    
+    <input type="datetime" name="esdate" placeholder="start date"><br><br>
+    
+    <input type="datetime" name="eedate" placeholder="end date"><br><br>
+    
+    <input type="text" value="{{regno}}" readonly><br><br>
+
+    <select name="eactive">
+        <option value="available">available</option>
+        <option value="not available">not available</option>
+    </select>
+
+    <button type="submit">Submit</button>
+
+   </form> 
+</body>
+</html>
