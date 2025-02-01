@@ -187,7 +187,7 @@ def list_by_user(request):
     context = {
         'polls': polls,
     }
-    return render(request, 'polls/polls_list.html', context)
+    return render(request, 'polls_list.html', context)
 
 
 @login_required()
@@ -207,13 +207,13 @@ def polls_add(request):
                 messages.success(
                     request, "Poll & Choices added successfully.", extra_tags='alert alert-success alert-dismissible fade show')
 
-                return redirect('polls:list')
+                return redirect('list')
         else:
             form = PollAddForm()
         context = {
             'form': form,
         }
-        return render(request, 'polls/add_poll.html', context)
+        return render(request, 'add_poll.html', context)
     else:
         return HttpResponse("Sorry but you don't have permission to do that!")
 
