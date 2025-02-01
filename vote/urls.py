@@ -34,7 +34,7 @@ urlpatterns = [
     
     #election
     # path('election_reg/',views.election_reg,name='election_reg'),
-    # path('election_list/',views.election_list,name='election_list'),,
+    # path('election_list/',views.election_list,name='election_list'),,,,
     
     path('list/', views.polls_list, name='list'),
     path('list/user/', views.list_by_user, name='list_by_user'),
